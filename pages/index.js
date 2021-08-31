@@ -46,8 +46,8 @@ export default function Home({ posts }) {
         <h1 className='p-8 text-center antialiased text-indigo-900 text-xl md:text-4xl tracking-wider'>WELCOME TO MY BLOG</h1>
         <hr />
         <div className='block md:flex'>
-          <div className='w-8/12'>
-            <h3 className='py-6'>Recent Posts:</h3>
+          <div className='w-full sm:w-8/12'>
+            <h3 className='px-4 sm:px-2 py-6'>Recent Posts:</h3>
             <hr />
             <ul className='list-disc p-6'>
               {recentPosts.length ? recentPosts.map((p, index) =>
@@ -59,7 +59,7 @@ export default function Home({ posts }) {
           </div>
           <div className='w-1/12 hidden sm:block'>
           </div>
-          <div className='w-3/12'>
+          <div className='w-full sm:w-3/12'>
             <div className='m-6 border border-gray-400 rounded-lg'>
               <h5 className='p-6'>title</h5>
               <hr />

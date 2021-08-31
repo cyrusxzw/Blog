@@ -1,0 +1,10 @@
+.content p {
+  font-size: 24px;
+  text-align: justify;
+  letter-spacing: 1.5px;
+  line-height: 45px;
+}
+
+.content img {
+  padding: 30px;
+}

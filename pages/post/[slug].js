@@ -5,6 +5,7 @@ import styles from '../../styles/Post.module.css';
 import client from '../../lib/sanity.js';
 import Menu from '../../components/menu.js';
 
+
 const Post = ({ title, body, image }) => {
 
     const imageProps = useNextSanityImage(
@@ -13,14 +14,16 @@ const Post = ({ title, body, image }) => {
     );
 
     return (
-        <div className='lg:container lg:mx-auto'>
+        <div className='lg:container lg:mx-auto mb-24'>
             <Menu />
-            <div className='md:text-2xl mt-8 mb-8 text-center tracking-wide font-semibold font-sans'>{title}</div>
-            {image && <Img {...imageProps} alt='main img' className={styles.postImg} />}
-            <BlockContent blocks={body} projectId='ypoob9sl' dataset='production' imageOptions={{
-                with: 500,
-                height: 500
-            }} />
+            <div className='md:text-2xl mt-8 mb-8 text-center tracking-wide font-semibold font-sans'>
+                <h1>{title}</h1><br />
+                <hr />
+                <div> {image && <Img {...imageProps} alt='main img' className={styles.postImg} />}</div>
+            </div>
+            <div className={`border rounded-md ${styles.content}`}>
+                <BlockContent className='p-6' blocks={body} projectId='ypoob9sl' dataset='production' imageOptions={{ fit: 'max' }} />
+            </div>
         </div>
     )
 }
